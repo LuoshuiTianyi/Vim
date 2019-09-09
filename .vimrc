@@ -49,7 +49,7 @@ let g:vim_markdown_new_list_item_indent = 2
 
 set nocompatible         " 设置不兼容原始vi模式
 set vb t_vb=             " 关闭错误提示音
-set t_Co=256             " 开启256色支持
+au GuiEnter * set t_vb=  " 关闭错误闪烁
 set backspace=indent,eol,start 
                          " 允许删除换行符
 set mouse=a              " 开启鼠标支持
@@ -62,7 +62,6 @@ set guifont=Ligalex\ Mono\ 14
                          " 设置 gvim 字体
 set makeprg=g++\ ./%\ -o\ ./%<
                          " 设置 make
-au GuiEnter * set t_vb=  " 关闭错误闪烁
 let g:netrw_liststyle = 1
                          " netrw 显示文件详细信息
 let g:netrw_banner = 0   " netrw 上方横幅不显示
@@ -94,6 +93,7 @@ highlight CursorLine   cterm=NONE ctermbg=black guibg=NONE guifg=NONE
                          " 高亮显示当前行具体设置
 set fillchars=vert:\ ,stl:\ ,stlnc:\   
                          " 在分割窗口间留出空白
+set t_Co=256             " 开启256色支持
 if (has("termguicolors"))
    set termguicolors
 endif                    " 色彩显示支持
