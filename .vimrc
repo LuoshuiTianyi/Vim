@@ -54,7 +54,6 @@ set backspace=indent,eol,start
                          " 允许删除换行符
 set mouse=a              " 开启鼠标支持
 set history=2000         " 历史ex命令记录上限提高
-set display=lastline     " 避免折行后某一行不见
 set showtabline=2        " 显示标签页栏
 filetype on              " 设置文件类型检测
 set go=                  " gvim 关闭菜单栏
