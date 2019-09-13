@@ -172,6 +172,7 @@ func! CompareRun()
   exec "w"
   if (&filetype == 'cpp')
     exec 'make'
+    exec 'cw'
     exec '!time ./%<'
   elseif (&filetype == 'tex')
     exec '!xelatex ./%'
