@@ -133,11 +133,6 @@ nmap <leader>c :tabe ~/Vim/.vimrc<CR>
 
 "***********************Usual Key Combinations**************************"
 
-noremap j gj
-noremap gj j
-noremap gk k
-noremap k gk
-                         " 移动对应屏幕行
 noremap <c-h> 10h
 noremap <c-l> 10l
 noremap <c-j> 5gj
