@@ -35,7 +35,7 @@ let g:eleline_powerline_fonts = 1
 "########################### clang-format ##############################"
 let g:clang_format#command = 'clang-format'
 autocmd FileType c ClangFormatAutoEnable
-source ~/Vim/.vimrc_clang-format
+source ~/Thyu/Vim/.vimrc_clang-format
 "############################# markdown ################################"
 let g:vim_markdown_math = 1
 let g:vim_markdown_strikethrough = 1
