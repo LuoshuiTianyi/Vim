@@ -16,15 +16,53 @@ function! File_size(f)
         return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
     endif
 endfunction
-set statusline+=%1*\ %{File_size(@%)}\ %*
+set laststatus=2
+set statusline=%1*\ %{File_size(@%)}\ %*
 set statusline+=%2*\ %F\ %*
 set statusline+=%=%3*\ %-14.(%l:%c%V%)%*
 set statusline+=%4*\ %P\ %*
 
 
-source ~/Vim/.vimrc.plugin
 
+"****************************Plug-ins' list*****************************"
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'LuoshuiTianyi/vim-softera'
+Plug 'LuoshuiTianyi/vim-typewriter'
+                         " Vim 配色
+Plug 'junegunn/limelight.vim'
+                         " 高亮聚焦
+Plug 'junegunn/goyo.vim'
+                         " 沉浸模式
+Plug 'LuoshuiTianyi/Vim-startify'
+                         " 启动界面
+Plug 'rhysd/vim-clang-format'
+                         " 代码格式化
+Plug 'yianwillis/vimcdoc'
+                         " 中文文档
+Plug 'vim-scripts/fcitx.vim'
+                         " 智能输入法切换
+Plug 'godlygeek/tabular'
+
+Plug 'plasticboy/vim-markdown'
+                         " markdown语法高亮
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+                         " markdown预览
+
+call plug#end()
+
+"########################### clang-format ##############################"
+
+let g:clang_format#command = 'clang-format'
+autocmd FileType c ClangFormatAutoEnable
+source ~/Vim/.vimrc_clang-format
+
+"############################# markdown ################################"
+
+let g:vim_markdown_math = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 "-----------------------------------------------------------------------"
 "----------------------------Basic Settings-----------------------------"
@@ -103,9 +141,9 @@ autocmd BufEnter * cd %:p:h
 
 let mapleader = " "      " 定义<leader>键
 nmap <leader>i :PlugInstall<cr>
-                 " 安装插件
+                         " 安装插件
 nmap <leader>u :PlugUpdate<cr>
-                 " 更新插件
+                         " 更新插件
 nmap <leader>d :PlugClean<cr>
                          " 删除插件
 noremap <leader>y "+y
@@ -194,4 +232,3 @@ set nobackup             " 设置不备份
 set noswapfile           " 禁止生成临时文件
 set autoread             " 文件在vim之外修改过，自动重新读入
 set confirm              " 在处理未保存或只读文件的时候，弹出确认
-
