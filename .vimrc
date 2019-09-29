@@ -8,11 +8,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'LuoshuiTianyi/vim-softera'
 Plug 'logico-software/typewriter'
-                         " Vim 配色'
+                         " Vim 配色
+Plug 'junegunn/limelight.vim'
+                         " 高亮聚焦
+Plug 'junegunn/goyo.vim'
+                         " 沉浸模式
 Plug 'LuoshuiTianyi/Vim-startify'
                          " 启动界面
-Plug 'liuchengxu/eleline.vim'
-                         " 状态栏插件
 Plug 'rhysd/vim-clang-format'
                          " 代码格式化
 Plug 'yianwillis/vimcdoc'
@@ -26,7 +28,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
 
-call plug#end()            
+call plug#end()
 
 "**************************Plug-in Settings*****************************"
 
@@ -34,16 +36,6 @@ call plug#end()
 set laststatus=2
 let g:eleline_powerline_fonts = 1
 "############################ typewriter ###############################"
-" Activate FOCUS mode with F12
-nmap <F12> :Goyo <bar> Limelight!!<CR>"
-
-" Change the cursor from block to i-beam in INSERT mode
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[1 q"
-augroup myCmds
-    au!
-      autocmd VimEnter * silent !echo -ne "\e[1 q"
-    augroup END
 "########################### clang-format ##############################"
 let g:clang_format#command = 'clang-format'
 autocmd FileType c ClangFormatAutoEnable
@@ -62,7 +54,7 @@ let g:vim_markdown_new_list_item_indent = 2
 set nocompatible         " 设置不兼容原始vi模式
 set vb t_vb=             " 关闭错误提示音
 au GuiEnter * set t_vb=  " 关闭错误闪烁
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
                          " 允许删除换行符
 set mouse=a              " 开启鼠标支持
 set history=2000         " 历史ex命令记录上限提高
@@ -151,18 +143,9 @@ noremap <c-j> 5gj
 noremap <c-k> 5gk
                          " 快速移动
 noremap K kJ
+                         " 映射 K 键
 
 noremap <c-n> :tabe .<CR>
-noremap <m-1> 1gt
-noremap <m-2> 2gt
-noremap <m-3> 3gt
-noremap <m-4> 4gt
-noremap <m-5> 5gt
-noremap <m-6> 6gt
-noremap <m-7> 7gt
-noremap <m-8> 8gt
-noremap <m-9> 9gt
-noremap <m-0> 10gt
 noremap <leader><leader> gt
                           " 标签页操作
 
@@ -193,6 +176,17 @@ func! CompareRun()
 endfunc
 nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
 
+nmap <leader>m :color typewriter<CR>
+nmap <leader>w :color softera<CR>
+
+nmap <F12> :Limelight!!<CR>
+nmap <F11> :Goyo <bar> <CR>
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
+augroup myCmds
+    au!
+      autocmd VimEnter * silent !echo -ne "\e[1 q"
+    augroup END
 
 "-----------------------------------------------------------------------"
 "----------------------------Coding Settings----------------------------"
@@ -203,7 +197,7 @@ nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
 
 set autoindent           " 设置自动缩进
 set cindent              " 设置使用C/C++语言的自动缩进方式
-set cinoptions=g0,:0,N-s,(0    
+set cinoptions=g0,:0,N-s,(0
                          " 设置C/C++语言的具体缩进方式
 set tabstop=2            " 设置制表符长度为两个空格
 set expandtab            " 设置制表符自动转化为空格
