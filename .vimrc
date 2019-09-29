@@ -1,4 +1,32 @@
 "-----------------------------------------------------------------------"
+"---------------------------------Status--------------------------------"
+"-----------------------------------------------------------------------"
+function! File_size(f)
+    let l:size = getfsize(expand(a:f))
+    if l:size == 0 || l:size == -1 || l:size == -2
+        return ''
+    endif
+    if l:size < 1024
+        return l:size.' bytes'
+    elseif l:size < 1024*1024
+        return printf('%.1f', l:size/1024.0).'k'
+    elseif l:size < 1024*1024*1024
+        return printf('%.1f', l:size/1024.0/1024.0) . 'm'
+    else
+        return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
+    endif
+endfunction
+set statusline+=%1*\ %{File_size(@%)}\ %*
+set statusline+=%2*\ %F\ %*
+set statusline+=%=%3*\ %-14.(%l:%c%V%)%*
+set statusline+=%4*\ %P\ %*
+hi User1 cterm=None guifg=#807e8f guibg=#cfc8f4 ctermfg=251 ctermbg=240
+hi User2 cterm=bold guifg=#807e8f guibg=#cfc8f4 ctermfg=169 ctermbg=147
+hi User3 cterm=None guifg=#807e8f guibg=#cfc8f4 ctermfg=250 ctermbg=238
+hi User4 cterm=None guifg=#807e8f guibg=#cfc8f4 ctermfg=249 ctermbg=240
+
+
+"-----------------------------------------------------------------------"
 "----------------------------About Plug-in------------------------------"
 "-----------------------------------------------------------------------"
 
@@ -7,7 +35,7 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'LuoshuiTianyi/vim-softera'
-Plug 'logico-software/typewriter'
+Plug 'LuoshuiTianyi/vim-typewriter'
                          " Vim 配色
 Plug 'junegunn/limelight.vim'
                          " 高亮聚焦
@@ -214,3 +242,4 @@ set nobackup             " 设置不备份
 set noswapfile           " 禁止生成临时文件
 set autoread             " 文件在vim之外修改过，自动重新读入
 set confirm              " 在处理未保存或只读文件的时候，弹出确认
+
