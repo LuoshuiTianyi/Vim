@@ -20,58 +20,10 @@ set statusline+=%1*\ %{File_size(@%)}\ %*
 set statusline+=%2*\ %F\ %*
 set statusline+=%=%3*\ %-14.(%l:%c%V%)%*
 set statusline+=%4*\ %P\ %*
-hi User1 cterm=None guifg=#807e8f guibg=#cfc8f4 ctermfg=251 ctermbg=240
-hi User2 cterm=bold guifg=#807e8f guibg=#cfc8f4 ctermfg=169 ctermbg=147
-hi User3 cterm=None guifg=#807e8f guibg=#cfc8f4 ctermfg=250 ctermbg=238
-hi User4 cterm=None guifg=#807e8f guibg=#cfc8f4 ctermfg=249 ctermbg=240
 
 
-"-----------------------------------------------------------------------"
-"----------------------------About Plug-in------------------------------"
-"-----------------------------------------------------------------------"
+source ~/Vim/.vimrc.plugin
 
-
-"****************************Plug-ins' list*****************************"
-
-call plug#begin('~/.vim/plugged')
-Plug 'LuoshuiTianyi/vim-softera'
-Plug 'LuoshuiTianyi/vim-typewriter'
-                         " Vim 配色
-Plug 'junegunn/limelight.vim'
-                         " 高亮聚焦
-Plug 'junegunn/goyo.vim'
-                         " 沉浸模式
-Plug 'LuoshuiTianyi/Vim-startify'
-                         " 启动界面
-Plug 'rhysd/vim-clang-format'
-                         " 代码格式化
-Plug 'yianwillis/vimcdoc'
-                         " 中文文档
-Plug 'vim-scripts/fcitx.vim'
-                         " 智能输入法切换
-Plug 'godlygeek/tabular'
-
-Plug 'plasticboy/vim-markdown'
-                         " markdown语法高亮
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-                         " markdown预览
-
-call plug#end()
-
-"**************************Plug-in Settings*****************************"
-
-"############################# eleline #################################"
-set laststatus=2
-let g:eleline_powerline_fonts = 1
-"############################ typewriter ###############################"
-"########################### clang-format ##############################"
-let g:clang_format#command = 'clang-format'
-autocmd FileType c ClangFormatAutoEnable
-source ~/Vim/.vimrc_clang-format
-"############################# markdown ################################"
-let g:vim_markdown_math = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_new_list_item_indent = 2
 
 
 "-----------------------------------------------------------------------"
