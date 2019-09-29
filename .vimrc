@@ -8,12 +8,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'LuoshuiTianyi/vim-softera'
 Plug 'logico-software/typewriter'
-Plug 'ayu-theme/ayu-vim'
-let ayucolor="light"
-Plug 'reedes/vim-colors-pencil'
-Plug 'rakr/vim-one'
-Plug 'kaicataldo/material.vim'
-let g:material_theme_style='lighter'
                          " Vim 配色'
 Plug 'LuoshuiTianyi/Vim-startify'
                          " 启动界面
@@ -39,6 +33,17 @@ call plug#end()
 "############################# eleline #################################"
 set laststatus=2
 let g:eleline_powerline_fonts = 1
+"############################ typewriter ###############################"
+" Activate FOCUS mode with F12
+nmap <F12> :Goyo <bar> Limelight!!<CR>"
+
+" Change the cursor from block to i-beam in INSERT mode
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
+augroup myCmds
+    au!
+      autocmd VimEnter * silent !echo -ne "\e[1 q"
+    augroup END
 "########################### clang-format ##############################"
 let g:clang_format#command = 'clang-format'
 autocmd FileType c ClangFormatAutoEnable
@@ -64,7 +69,7 @@ set history=2000         " 历史ex命令记录上限提高
 set showtabline=2        " 显示标签页栏
 filetype on              " 设置文件类型检测
 set go=                  " gvim 关闭菜单栏
-set guifont=Ligalex\ Mono\ 14
+set guifont=Fira\ Code\ 14
                          " 设置 gvim 字体
 set makeprg=g++\ ./%\ -o\ ./%<
                          " 设置 make
