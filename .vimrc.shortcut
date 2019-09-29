@@ -1,0 +1,68 @@
+"****************************About Leader*******************************"
+
+let mapleader = " "      " 定义<leader>键
+nmap <leader>i :PlugInstall<cr>
+                         " 安装插件
+nmap <leader>u :PlugUpdate<cr>
+                         " 更新插件
+nmap <leader>d :PlugClean<cr>
+                         " 删除插件
+noremap <leader>y "+y
+                         " 复制
+noremap <leader>p "+p
+                         " 粘贴
+nmap <leader>c :tabe ~/Vim/.vimrc<CR>
+                         " 快速打开配置文件
+
+"***********************Usual Key Combinations**************************"
+
+noremap <c-h> 10h
+noremap <c-l> 10l
+noremap <c-j> 5gj
+noremap <c-k> 5gk
+                         " 快速移动
+noremap K kJ
+                         " 映射 K 键
+
+noremap <c-n> :tabe .<CR>
+noremap <leader><leader> gt
+                          " 标签页操作
+
+"************************One Button Functions***************************"
+
+nmap <F5> :ClangFormat<cr>
+                         " 格式化代码
+nmap <leader>s :source ~/.vimrc<CR>
+                         " 刷新配置
+nmap <F8> :vs %<.out<cr>:sp %<.in<cr>
+                         " F8打开输入输出文件
+nmap <F9> :call CompareRun()<CR>
+func! CompareRun()
+  exec "w"
+  if (&filetype == 'cpp')
+    exec 'make'
+    exec 'cw'
+    exec '!time ./%<'
+  elseif (&filetype == 'tex')
+    exec '!xelatex ./%'
+  elseif (&filetype == 'sh')
+    exec '!chmod +x ./%'
+    exec '!bash ./%'
+  elseif (&filetype == 'python')
+    exec '!chmod +x ./%'
+    exec '!python3 ./%'
+  endif
+endfunc
+nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
+
+nmap <leader>m :color typewriter<CR>
+nmap <leader>w :color softera<CR>
+
+nmap <F12> :Limelight!!<CR>
+nmap <F11> :Goyo <bar> <CR>
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
+augroup myCmds
+    au!
+      autocmd VimEnter * silent !echo -ne "\e[1 q"
+    augroup END

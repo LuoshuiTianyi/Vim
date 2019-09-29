@@ -1,68 +1,7 @@
-"-----------------------------------------------------------------------"
-"---------------------------------Status--------------------------------"
-"-----------------------------------------------------------------------"
-function! File_size(f)
-    let l:size = getfsize(expand(a:f))
-    if l:size == 0 || l:size == -1 || l:size == -2
-        return ''
-    endif
-    if l:size < 1024
-        return l:size.' bytes'
-    elseif l:size < 1024*1024
-        return printf('%.1f', l:size/1024.0).'k'
-    elseif l:size < 1024*1024*1024
-        return printf('%.1f', l:size/1024.0/1024.0) . 'm'
-    else
-        return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
-    endif
-endfunction
-set laststatus=2
-set statusline=%1*\ %{File_size(@%)}\ %*
-set statusline+=%2*\ %F\ %*
-set statusline+=%=%3*\ %-14.(%l:%c%V%)%*
-set statusline+=%4*\ %P\ %*
+source ~/Vim/.vimrc.status
 
+source ~/Vim/.vimrc.plugin
 
-
-"****************************Plug-ins' list*****************************"
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'LuoshuiTianyi/vim-softera'
-Plug 'LuoshuiTianyi/vim-typewriter'
-                         " Vim 配色
-Plug 'junegunn/limelight.vim'
-                         " 高亮聚焦
-Plug 'junegunn/goyo.vim'
-                         " 沉浸模式
-Plug 'LuoshuiTianyi/Vim-startify'
-                         " 启动界面
-Plug 'rhysd/vim-clang-format'
-                         " 代码格式化
-Plug 'yianwillis/vimcdoc'
-                         " 中文文档
-Plug 'vim-scripts/fcitx.vim'
-                         " 智能输入法切换
-Plug 'godlygeek/tabular'
-
-Plug 'plasticboy/vim-markdown'
-                         " markdown语法高亮
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-                         " markdown预览
-
-call plug#end()
-
-"########################### clang-format ##############################"
-
-let g:clang_format#command = 'clang-format'
-autocmd FileType c ClangFormatAutoEnable
-source ~/Vim/.vimrc_clang-format
-
-"############################# markdown ################################"
-
-let g:vim_markdown_math = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_new_list_item_indent = 2
 
 "-----------------------------------------------------------------------"
 "----------------------------Basic Settings-----------------------------"
@@ -83,7 +22,7 @@ set guifont=Fira\ Code\ 14
                          " 设置 gvim 字体
 set makeprg=g++\ ./%\ -o\ ./%<
                          " 设置 make
-let g:netrw_liststyle = 1
+let g:netrw_liststyle = 3
                          " netrw 显示文件详细信息
 let g:netrw_banner = 0   " netrw 上方横幅不显示
 
@@ -132,79 +71,8 @@ autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
 autocmd BufEnter * cd %:p:h
 
 
-"-----------------------------------------------------------------------"
-"----------------------------Shortcut Keys------------------------------"
-"-----------------------------------------------------------------------"
+source ~/Vim/.vimrc.shortcut
 
-
-"****************************About Leader*******************************"
-
-let mapleader = " "      " 定义<leader>键
-nmap <leader>i :PlugInstall<cr>
-                         " 安装插件
-nmap <leader>u :PlugUpdate<cr>
-                         " 更新插件
-nmap <leader>d :PlugClean<cr>
-                         " 删除插件
-noremap <leader>y "+y
-                         " 复制
-noremap <leader>p "+p
-                         " 粘贴
-nmap <leader>c :tabe ~/Vim/.vimrc<CR>
-                         " 快速打开配置文件
-
-"***********************Usual Key Combinations**************************"
-
-noremap <c-h> 10h
-noremap <c-l> 10l
-noremap <c-j> 5gj
-noremap <c-k> 5gk
-                         " 快速移动
-noremap K kJ
-                         " 映射 K 键
-
-noremap <c-n> :tabe .<CR>
-noremap <leader><leader> gt
-                          " 标签页操作
-
-"************************One Button Functions***************************"
-
-nmap <F5> :ClangFormat<cr>
-                         " 格式化代码
-nmap <leader>s :source ~/.vimrc<CR>
-                         " 刷新配置
-nmap <F8> :vs %<.out<cr>:sp %<.in<cr>
-                         " F8打开输入输出文件
-nmap <F9> :call CompareRun()<CR>
-func! CompareRun()
-  exec "w"
-  if (&filetype == 'cpp')
-    exec 'make'
-    exec 'cw'
-    exec '!time ./%<'
-  elseif (&filetype == 'tex')
-    exec '!xelatex ./%'
-  elseif (&filetype == 'sh')
-    exec '!chmod +x ./%'
-    exec '!bash ./%'
-  elseif (&filetype == 'python')
-    exec '!chmod +x ./%'
-    exec '!python3 ./%'
-  endif
-endfunc
-nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
-
-nmap <leader>m :color typewriter<CR>
-nmap <leader>w :color softera<CR>
-
-nmap <F12> :Limelight!!<CR>
-nmap <F11> :Goyo <bar> <CR>
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[1 q"
-augroup myCmds
-    au!
-      autocmd VimEnter * silent !echo -ne "\e[1 q"
-    augroup END
 
 "-----------------------------------------------------------------------"
 "----------------------------Coding Settings----------------------------"
