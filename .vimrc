@@ -7,7 +7,14 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'LuoshuiTianyi/vim-softera'
-                         " Vim 配色
+Plug 'logico-software/typewriter'
+Plug 'ayu-theme/ayu-vim'
+let ayucolor="light"
+Plug 'reedes/vim-colors-pencil'
+Plug 'rakr/vim-one'
+Plug 'kaicataldo/material.vim'
+let g:material_theme_style='lighter'
+                         " Vim 配色'
 Plug 'LuoshuiTianyi/Vim-startify'
                          " 启动界面
 Plug 'liuchengxu/eleline.vim'
@@ -74,7 +81,7 @@ let g:netrw_banner = 0   " netrw 上方横幅不显示
 set ruler                " 总是显示光标位置
 set number               " 开启行号显示
 set whichwrap+=<,>,h,l   " 设置光标键跨行
-set virtualedit=block,onemore   
+set virtualedit=block,onemore
                          " 允许光标出现在最后一个字符的后面
 set ttimeoutlen=0        " 设置<ESC>键响应时间
 set wildmenu             " 开启zsh支持
@@ -88,9 +95,9 @@ set wildmode=full        " zsh补全菜单
 
 syntax on                " 自动语法高亮
 set cursorline           " 高亮显示当前行
-highlight CursorLine   cterm=NONE ctermbg=black guibg=NONE guifg=NONE
+highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
                          " 高亮显示当前行具体设置
-set fillchars=vert:\ ,stl:\ ,stlnc:\   
+set fillchars=vert:\ ,stl:\ ,stlnc:\
                          " 在分割窗口间留出空白
 set t_Co=256             " 开启256色支持
 if (has("termguicolors"))
