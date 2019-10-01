@@ -58,8 +58,9 @@ nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
 nmap <leader>m :color typewriter<CR>
 nmap <leader>w :color softera<CR>
 
-nmap <F12> :Limelight!!<CR>
+nmap <F10> :MarkdownPreview<CR>
 nmap <F11> :Goyo <bar> <CR>
+nmap <F12> :Limelight!!<CR>
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[1 q"
 augroup myCmds
