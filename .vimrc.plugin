@@ -23,6 +23,8 @@ Plug 'plasticboy/vim-markdown'
                          " markdown语法高亮
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
+Plug 'davidhalter/jedi-vim'
+                         " Python 自动补全
 
 call plug#end()
 
@@ -37,3 +39,5 @@ source ~/Vim/.vimrc_clang-format
 let g:vim_markdown_math = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 2
+
+let g:jedi#completions_command = "<C-N>"
