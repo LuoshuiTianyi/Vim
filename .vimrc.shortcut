@@ -25,7 +25,8 @@ noremap K kJ
                          " 映射 K 键
 
 noremap <c-n> :tabe .<CR>
-noremap <leader><leader> gt
+noremap <leader>] gt
+noremap <leader>[ gT
                           " 标签页操作
 
 "************************One Button Functions***************************"
