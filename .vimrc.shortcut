@@ -50,7 +50,6 @@ func! CompareRun()
     exec '!chmod +x ./%'
     exec '!bash ./%'
   elseif (&filetype == 'python')
-    exec '!chmod +x ./%'
     exec '!python3 ./%'
   endif
 endfunc
