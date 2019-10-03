@@ -25,6 +25,11 @@ set makeprg=g++\ ./%\ -o\ ./%<
 let g:netrw_liststyle = 3
                          " netrw 显示文件详细信息
 let g:netrw_banner = 0   " netrw 上方横幅不显示
+let g:netrw_hide = 1
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 24
+let g:netrw_altv = 1
+let g:netrw_chgwin = 2
 
 
 "-----------------------------------------------------------------------"
