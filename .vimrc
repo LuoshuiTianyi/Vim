@@ -71,7 +71,6 @@ color softera            " 颜色主题
 
 
 autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
-autocmd BufNewFile *.py :0r ~/Template/template.py
 autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
 autocmd BufEnter * cd %:p:h
 
