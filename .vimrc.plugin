@@ -41,3 +41,10 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 2
 
 let g:jedi#completions_command = "<C-N>"
+
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
+augroup myCmds
+    au!
+      autocmd VimEnter * silent !echo -ne "\e[1 q"
+    augroup END

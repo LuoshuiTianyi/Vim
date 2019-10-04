@@ -61,9 +61,3 @@ nmap <leader>w :color softera<CR>
 nmap <F10> :MarkdownPreview<CR>
 nmap <F11> :Goyo <bar> <CR>
 nmap <F12> :Limelight!!<CR>
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[1 q"
-augroup myCmds
-    au!
-      autocmd VimEnter * silent !echo -ne "\e[1 q"
-    augroup END
