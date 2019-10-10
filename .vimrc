@@ -62,7 +62,7 @@ set t_Co=256             " 开启256色支持
 if (has("termguicolors"))
    set termguicolors
 endif                    " 色彩显示支持
-color softera            " 颜色主题
+color onedark            " 颜色主题
 
 
 "-----------------------------------------------------------------------"

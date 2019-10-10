@@ -1,9 +1,10 @@
-"########################### Plug-ins' list ############################"
+"########################## Plug-ins' list #############################"
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'LuoshuiTianyi/vim-softera'
 Plug 'LuoshuiTianyi/vim-typewriter'
+Plug 'joshdick/onedark.vim'
                          " Vim 配色
 Plug 'junegunn/limelight.vim'
                          " 高亮聚焦
@@ -23,27 +24,24 @@ Plug 'plasticboy/vim-markdown'
                          " markdown语法高亮
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
-Plug 'davidhalter/jedi-vim'
-                         " Python 自动补全
 
 call plug#end()
 
-"########################### clang-format ##############################"
+"############################# clang-format ############################"
 
 let g:clang_format#command = 'clang-format'
 autocmd FileType c ClangFormatAutoEnable
 source ~/Vim/.vimrc_clang-format
 
-"############################# markdown ################################"
+"############################## markdown ###############################"
 
 let g:vim_markdown_math = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 2
 
-let g:jedi#completions_command = "<C-N>"
-
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[1 q"
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[3 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 augroup myCmds
     au!
       autocmd VimEnter * silent !echo -ne "\e[1 q"
