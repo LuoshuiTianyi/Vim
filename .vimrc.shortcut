@@ -7,10 +7,6 @@ nmap <leader>u :PlugUpdate<cr>
                          " 更新插件
 nmap <leader>d :PlugClean<cr>
                          " 删除插件
-noremap <leader>y "+y
-                         " 复制
-noremap <leader>p "+p
-                         " 粘贴
 nmap <leader>c :tabe ~/Vim/.vimrc<CR>
                          " 快速打开配置文件
 
