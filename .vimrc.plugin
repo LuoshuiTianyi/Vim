@@ -24,6 +24,8 @@ Plug 'plasticboy/vim-markdown'
                          " markdown语法高亮
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
+Plug 'ctrlpvim/ctrlp.vim'
+                         " 模糊搜索
 
 call plug#end()
 
@@ -38,6 +40,8 @@ source ~/Vim/.vimrc_clang-format
 let g:vim_markdown_math = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 2
+
+nmap <c-f> :CtrlP<cr>
 
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[3 q" "SR = REPLACE mode
