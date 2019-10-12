@@ -59,5 +59,8 @@ nmap <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=addre
                          " 超级调试
 
 nmap <F10> :MarkdownPreview<CR>
+                         " Markdown 预览
 nmap <F11> :Goyo <bar> <CR>
+                         " 沉浸模式
 nmap <F12> :Limelight!!<CR>
+                         " 聚焦模式
