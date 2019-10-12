@@ -2,6 +2,7 @@ source ~/Vim/.vimrc.status
 
 source ~/Vim/.vimrc.plugin
 
+set completeopt=menu
 
 "-----------------------------------------------------------------------"
 "----------------------------Basic Settings-----------------------------"
