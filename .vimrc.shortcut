@@ -9,6 +9,8 @@ nmap <leader>d :PlugClean<cr>
                          " 删除插件
 nmap <leader>c :tabe ~/Vim/.vimrc<CR>
                          " 快速打开配置文件
+nmap <leader>s :source ~/.vimrc<CR>
+                         " 刷新配置
 
 "***********************Usual Key Combinations**************************"
 
@@ -33,8 +35,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <F5> :ClangFormat<cr>
                          " 格式化代码
-nmap <leader>s :source ~/.vimrc<CR>
-                         " 刷新配置
+nmap <leader><F5> :!ctags --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf ./%<cr>
 nmap <F8> :vs %<.out<cr>:sp %<.in<cr>
                          " F8打开输入输出文件
 nmap <F9> :call CompareRun()<CR>
