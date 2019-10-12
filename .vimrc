@@ -2,10 +2,6 @@ source ~/Vim/.vimrc.status
 
 source ~/Vim/.vimrc.plugin
 
-set completeopt=menu
-set tags+=tags
-set tags+=/home/.vim/tag/tags
-                         
 "-----------------------------------------------------------------------"
 "----------------------------Basic Settings-----------------------------"
 "-----------------------------------------------------------------------"
@@ -33,6 +29,7 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 18
 let g:netrw_altv = 1
 let g:netrw_chgwin = 2
+set completeopt=menu
 
 
 "-----------------------------------------------------------------------"
