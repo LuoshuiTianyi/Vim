@@ -24,7 +24,6 @@ Plug 'plasticboy/vim-markdown'
                          " markdown语法高亮
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
-Plug 'vim-scripts/OmniCppComplete'
 
 call plug#end()
 

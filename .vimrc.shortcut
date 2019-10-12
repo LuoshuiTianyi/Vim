@@ -35,7 +35,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <F5> :ClangFormat<cr>
                          " 格式化代码
-nmap <leader><F5> :!ctags --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf ./%<cr>
 nmap <F8> :vs %<.out<cr>:sp %<.in<cr>
                          " F8打开输入输出文件
 nmap <F9> :call CompareRun()<CR>
@@ -53,7 +52,7 @@ func! CompareRun()
   elseif (&filetype == 'python')
     exec '!python3 ./%'
   endif
-endfunc                  " 
+endfunc                  " 编译运行
 nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
 nmap <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
 
