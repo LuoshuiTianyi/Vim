@@ -29,13 +29,9 @@ noremap <silent> ]T :tabl<CR>
 
 "***********************Usual Key Combinations**************************"
 
-noremap <c-h> 10h
-noremap <c-l> 10l
 noremap <c-j> 5gj
 noremap <c-k> 5gk
                          " 快速移动
-imap <c-l> <c-n>
-imap <c-h> <c-p>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
 
