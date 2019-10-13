@@ -14,10 +14,10 @@ nmap <silent> <leader>s :source ~/.vimrc<CR>
 
 "********************************[ and ]********************************"
 
-noremap <silent> [a :p<CR>
+noremap <silent> [a :pr<CR>
 noremap <silent> ]a :n<CR>
-noremap <silent> [a :f<CR>
-noremap <silent> ]a :l<CR>
+noremap <silent> [A :f<CR>
+noremap <silent> ]A :l<CR>
                          " 遍历 args
 noremap <silent> [b :bp<CR>
 noremap <silent> ]b :bn<CR>
