@@ -53,4 +53,4 @@ let g:netrw_chgwin = 2
 
 "################################ omni #################################"
 
-set completeopt=menu
+set completeopt=menu     " omni 补全表现方式

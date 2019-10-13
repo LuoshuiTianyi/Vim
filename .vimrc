@@ -23,15 +23,6 @@ set guifont=Fira\ Code\ 14
                          " 设置 gvim 字体
 set makeprg=g++\ ./%\ -o\ ./%<
                          " 设置 make
-let g:netrw_liststyle = 3
-                         " netrw 显示文件详细信息
-let g:netrw_banner = 0   " netrw 上方横幅不显示
-let g:netrw_hide = 1
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 18
-let g:netrw_altv = 1
-let g:netrw_chgwin = 2
-set completeopt=menu
 
 
 "-----------------------------------------------------------------------"
@@ -80,7 +71,6 @@ autocmd VimEnter * silent !echo -ne "\e[1 q"
 autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
 autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
 autocmd BufEnter * cd %:p:h
-
 
 source ~/Vim/.vimrc.shortcut
 
