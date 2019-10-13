@@ -34,9 +34,6 @@ noremap <c-l> 10l
 noremap <c-j> 5gj
 noremap <c-k> 5gk
                          " 快速移动
-noremap K kJ
-                         " 映射 K 键
-
 imap <c-l> <c-n>
 imap <c-h> <c-p>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
