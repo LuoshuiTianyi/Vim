@@ -23,8 +23,8 @@ noremap K kJ
                          " 映射 K 键
 
 noremap <c-n> :tabe .<CR>
-noremap <leader>] gt
-noremap <leader>[ gT
+noremap L gt
+noremap H gT
                           " 标签页操作
 imap <c-l> <c-n>
 imap <c-h> <c-p>
