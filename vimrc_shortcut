@@ -18,18 +18,22 @@ noremap <silent> [a :ap<CR>
 noremap <silent> ]a :an<CR>
 noremap <silent> [a :af<CR>
 noremap <silent> ]a :al<CR>
+                         " 遍历 args
 noremap <silent> [b :bp<CR>
 noremap <silent> ]b :bn<CR>
 noremap <silent> [B :bf<CR>
 noremap <silent> ]B :bl<CR>
+                         " 遍历 buffer
 noremap <silent> [q :cp<CR>
 noremap <silent> ]q :cn<CR>
 noremap <silent> [Q :cf<CR>
 noremap <silent> ]Q :cl<CR>
+                         " 遍历 QuickFix
 noremap <silent> [t :tabp<CR>
 noremap <silent> ]t :tabn<CR>
 noremap <silent> [T :tabf<CR>
 noremap <silent> ]T :tabl<CR>
+                         " 遍历 tab
 
 "***********************Usual Key Combinations**************************"
 
