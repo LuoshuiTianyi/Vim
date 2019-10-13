@@ -1,6 +1,6 @@
-source ~/Vim/.vimrc.status
+source ~/Vim/vimrc_statusline
 
-source ~/Vim/.vimrc.plugin
+source ~/Vim/vimrc_plugin
 
 "-----------------------------------------------------------------------"
 "----------------------------Basic Settings-----------------------------"
@@ -72,7 +72,7 @@ autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
 autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
 autocmd BufEnter * cd %:p:h
 
-source ~/Vim/.vimrc.shortcut
+source ~/Vim/.vimrc_shortcut
 
 
 "-----------------------------------------------------------------------"

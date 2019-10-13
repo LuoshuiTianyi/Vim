@@ -30,7 +30,7 @@ call plug#end()
 
 let g:clang_format#command = 'clang-format'
 autocmd FileType c ClangFormatAutoEnable
-source ~/Vim/.vimrc_clang-format
+source ~/Vim/vimrc_clang-format
 
 "############################## markdown ###############################"
 
