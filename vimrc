@@ -72,7 +72,7 @@ autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
 autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
 autocmd BufEnter * cd %:p:h
 
-source ~/Vim/.vimrc_shortcut
+source ~/Vim/vimrc_shortcut
 
 
 "-----------------------------------------------------------------------"
