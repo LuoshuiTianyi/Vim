@@ -26,6 +26,7 @@ imap <c-l> <c-n>
 imap <c-h> <c-p>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
+
 "************************One Button Functions***************************"
 
 nmap <F5> :ClangFormat<CR>
