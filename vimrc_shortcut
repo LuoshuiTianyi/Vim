@@ -22,17 +22,10 @@ noremap <c-k> 5gk
 noremap K kJ
                          " 映射 K 键
 
-noremap <c-n> :tabe .<CR>
-noremap L gt
-noremap H gT
-                          " 标签页操作
 imap <c-l> <c-n>
 imap <c-h> <c-p>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
-noremap <leader>[ :cp<CR>
-noremap <leader>] :cn<CR>
-
 "************************One Button Functions***************************"
 
 nmap <F5> :ClangFormat<CR>
