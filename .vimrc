@@ -65,6 +65,11 @@ if (has("termguicolors"))
    set termguicolors
 endif                    " 色彩显示支持
 color onedark            " 颜色主题
+let &t_SI.="\e[5 q" 
+let &t_SR.="\e[3 q" 
+let &t_EI.="\e[1 q" 
+autocmd VimEnter * silent !echo -ne "\e[1 q"
+                         " 设置终端下不同模式光标变化
 
 
 "-----------------------------------------------------------------------"
