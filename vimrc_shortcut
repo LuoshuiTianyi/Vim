@@ -30,7 +30,7 @@ imap <c-l> <c-n>
 imap <c-h> <c-p>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
-noremap <leader>[ :cb<CR>
+noremap <leader>[ :cp<CR>
 noremap <leader>] :cn<CR>
 
 "************************One Button Functions***************************"
