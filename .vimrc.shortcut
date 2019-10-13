@@ -1,13 +1,13 @@
 "****************************About Leader*******************************"
 
 let mapleader = " "      " 定义<leader>键
-nmap <leader>i :PlugInstall<cr>
+nmap <leader>i :PlugInstall<CR>
                          " 安装插件
-nmap <leader>u :PlugUpdate<cr>
+nmap <leader>u :PlugUpdate<CR>
                          " 更新插件
-nmap <leader>d :PlugClean<cr>
+nmap <leader>d :PlugClean<CR>
                          " 删除插件
-nmap <leader>c :tabe ~/Vim/.vimrc<CR>
+nmap <leader>c :tabe ~/Vim/vimrc<CR>
                          " 快速打开配置文件
 nmap <leader>s :source ~/.vimrc<CR>
                          " 刷新配置
@@ -30,12 +30,14 @@ imap <c-l> <c-n>
 imap <c-h> <c-p>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
+noremap <leader>[ :cb<CR>
+noremap <leader>] :cn<CR>
 
 "************************One Button Functions***************************"
 
-nmap <F5> :ClangFormat<cr>
+nmap <F5> :ClangFormat<CR>
                          " 格式化代码
-nmap <F8> :vs %<.out<cr>:sp %<.in<cr>
+nmap <F8> :vs %<.out<CR>:sp %<.in<CR>
                          " F8打开输入输出文件
 nmap <F9> :call CompareRun()<CR>
 func! CompareRun()
