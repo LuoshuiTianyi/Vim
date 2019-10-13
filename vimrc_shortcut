@@ -12,6 +12,10 @@ nmap <leader>c :tabe ~/Vim/vimrc<CR>
 nmap <leader>s :source ~/.vimrc<CR>
                          " 刷新配置
 
+"********************************[ and ]********************************"
+
+noremap <silent>
+
 "***********************Usual Key Combinations**************************"
 
 noremap <c-h> 10h
