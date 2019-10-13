@@ -14,6 +14,10 @@ nmap <silent> <leader>s :source ~/.vimrc<CR>
 
 "********************************[ and ]********************************"
 
+noremap <silent> [a :ap<CR>
+noremap <silent> ]a :an<CR>
+noremap <silent> [A :af<CR>
+noremap <silent> ]A :al<CR>
 noremap <silent> [b :bp<CR>
 noremap <silent> ]b :bn<CR>
 noremap <silent> [B :bf<CR>
