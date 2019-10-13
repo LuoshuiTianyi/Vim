@@ -15,7 +15,7 @@ set backspace=indent,eol,start
 set mouse=a              " 开启鼠标支持
 set history=2000         " 历史ex命令记录上限提高
 set showtabline=2        " 显示标签页栏
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
                          " 设置无名寄存器与系统剪切板同步
 filetype on              " 设置文件类型检测
 set go=                  " gvim 关闭菜单栏
