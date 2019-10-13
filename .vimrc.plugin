@@ -39,6 +39,7 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 2
 
 "################################ netrw ################################"
+
 let g:netrw_liststyle = 3
                          " netrw 显示文件详细信息
 let g:netrw_banner = 0   " netrw 上方横幅不显示
@@ -50,9 +51,8 @@ let g:netrw_winsize = 18
 let g:netrw_chgwin = 2
                          " 打开新文件时使用原窗口
 
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[3 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-autocmd VimEnter * silent !echo -ne "\e[1 q"
+"################################ omni #################################"
 
 set completeopt=menu
+
+
