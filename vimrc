@@ -51,10 +51,7 @@ highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
                          " 高亮显示当前行具体设置
 set fillchars=vert:\ ,stl:\ ,stlnc:\
                          " 在分割窗口间留出空白
-set t_Co=256             " 开启256色支持
-if (has("termguicolors"))
-   set termguicolors
-endif                    " 色彩显示支持
+set termguicolors        " 色彩显示支持
 color onedark            " 颜色主题
 let &t_SI.="\e[5 q" 
 let &t_SR.="\e[3 q" 
