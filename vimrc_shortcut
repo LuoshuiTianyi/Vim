@@ -69,6 +69,7 @@ nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR>
                          " O2 C++11
 nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
                          " 超级调试
+nmap <silent> <F10> :w<CR>:!python3 ./gen.py > %<.in<CR>
 
 nmap <silent> <F11> :Goyo <bar> <CR>
                          " 沉浸模式
