@@ -23,8 +23,6 @@ Plug 'plasticboy/vim-markdown'
                          " markdown语法高亮
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-                         " coc补全
 
 call plug#end()
 
