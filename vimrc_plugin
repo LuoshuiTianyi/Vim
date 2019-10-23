@@ -25,8 +25,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
 Plug 'tpope/vim-surround'
                          " 修改文本对象的贴心插件
-Plug 'easymotion/vim-easymotion'
-                         " 快速跳转
 
 call plug#end()
 
@@ -62,7 +60,3 @@ let g:netrw_chgwin = 2
 set tags+=./tags,tags    " 添加 tag
 set completeopt=menu     " omni 补全表现方式
 set complete-=i
-
-"############################# easymotion ##############################"
-
-"nmap <Leader> <Plug>(easymotion-prefix)
