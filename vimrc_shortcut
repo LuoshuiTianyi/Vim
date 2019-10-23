@@ -47,6 +47,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <silent> <F5> :ClangFormat<CR>
                          " 格式化代码
+nmap <silent> <leader><F5> :!ctags -R --fields=+iaS --extra=+q *<CR>:set tags+=./tags
 nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
                          " F8打开输入输出文件
 nmap <silent> <F9> :call CompareRun()<CR>
