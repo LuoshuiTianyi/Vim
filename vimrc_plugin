@@ -25,7 +25,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
 Plug 'tpope/vim-surround'
                          " 修改文本对象的贴心插件
-Plug 'yonchu/accelerated-smooth-scroll'
+Plug 'terryma/vim-smooth-scroll'
                          " 平滑滚动
 
 call plug#end()
@@ -63,3 +63,8 @@ set tags+=./tags,tags    " 添加 tag
 set completeopt=menu     " omni 补全表现方式
 set complete-=i
 
+
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 3, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 3, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 3, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 3, 4)<CR>
