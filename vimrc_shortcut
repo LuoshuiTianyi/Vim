@@ -9,7 +9,7 @@ nmap <silent> <leader>d :PlugClean<CR>
                          " 删除插件
 nmap <silent> <leader>c :tabe ~/Vim/vimrc<CR>
                          " 快速打开配置文件
-nmap <silent> <leader>s :source ~/.vimrc<CR>
+nmap <silent> <leader><leader>s :source ~/.vimrc<CR>
                          " 刷新配置
 
 "********************************[ and ]********************************"
@@ -37,9 +37,6 @@ noremap <silent> ]T :tabl<CR>
 
 "***********************Usual Key Combinations**************************"
 
-noremap <c-j> 5gj
-noremap <c-k> 5gk
-                         " 快速移动
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
 
