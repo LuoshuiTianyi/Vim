@@ -14,7 +14,11 @@ func Scroll(up)
   endif
   while counter < lim
     let counter += 1
-    sleep 5m
+    if a:up == 0 || a:up == 1
+      sleep 10m
+    else
+      sleep 5m
+    endif
     redraw
     exec "normal " . scrollaction
   endwhile
