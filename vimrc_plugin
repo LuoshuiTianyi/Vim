@@ -18,6 +18,8 @@
     " |- Chinese doc
       Plug 'yianwillis/vimcdoc'
   call plug#end()
+    " |- matchit
+      runtime macros/matchit.vim
 
 " |- Settings of Plug
   " |- clang-format
