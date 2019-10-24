@@ -1,18 +1,22 @@
 func SmoothScroll(up)
-    if s:up
-        let scrollaction="\<c-y>"
-    else
-        let scrollaction="\<c-e>"
-    endif
-    exec "normal " . scrollaction
+  if a:up == 0
+    let scrollaction="\<c-y>"
+  else
+    let scrollaction="\<c-e>"
+  endif
+  exec "normal " . scrollaction
+  redraw
+  let counter = 1
+  if a:up == 3 || a:up == 4
+    let lim = 20
+  else
+    let lim = 10
+  while counter < lim
+    let counter += 1
+    sleep 10m
     redraw
-    let counter=1
-    while counter<10
-        let counter+=1
-        sleep 10m
-        redraw
-        exec "normal " . scrollaction
-    endwhile
+    exec "normal " . scrollaction
+  endwhile
 endfunc                  " 平滑滚动 
 
 func! CompareRun()
