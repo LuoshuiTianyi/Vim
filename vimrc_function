@@ -24,6 +24,9 @@
       exec "normal " . scrollaction
       if a:up == 0 || a:up == 2
         exec "normal k"
+      else
+        exec "normal j"
+      endif
     endwhile
   endfunc
 
