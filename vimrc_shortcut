@@ -1,34 +1,46 @@
-"|- leader
+" |- leader
   let mapleader = " "      " 定义<leader>键
-"|- Plug
-  "|- Install
+" |- Plug
+  " |- install
     nmap <silent> <leader>i :PlugInstall<CR>
-  "|- Update
-  nmap <silent> <leader>u :PlugUpdate<CR>
-  "|- Delete
-  nmap <silent> <leader>d :PlugClean<CR>
-"|- Profile
-  "|- Open
+  " |- update
+    nmap <silent> <leader>u :PlugUpdate<CR>
+  " |- delete
+    nmap <silent> <leader>d :PlugClean<CR>
+" |- Profile
+  " |- open
     nmap <silent> <leader>c :tabe ~/Vim/vimrc<CR>
-  "|- Source
+  " |- source
     nmap <silent> <leader><leader>s :source ~/.vimrc<CR>
-"|- ListsTraverse
-  " 
-noremap <silent> [a :prev<CR>
-noremap <silent> ]a :n<CR>
-noremap <silent> [A :f<CR>
-noremap <silent> ]A :l<CR>
-                         " 遍历 args
-noremap <silent> [b :bp<CR>
-noremap <silent> ]b :bn<CR>
-noremap <silent> [B :bf<CR>
-noremap <silent> ]B :bl<CR>
-                         " 遍历 buffer
-noremap <silent> [q :cp<CR>
-noremap <silent> ]q :cn<CR>
-noremap <silent> [Q :cf<CR>
-noremap <silent> ]Q :cl<CR>
-                         " 遍历 QuickFix
+" |- ListsTraverse
+  " |-args
+    " |- previous
+      noremap <silent> [a :prev<CR>
+    " |- next
+      noremap <silent> ]a :n<CR>
+    " |- first
+      noremap <silent> [A :f<CR>
+    " |- last
+      noremap <silent> ]A :l<CR>
+  " |- buffer
+    " |- previous
+      noremap <silent> [b :bp<CR>
+    " |- next
+      noremap <silent> ]b :bn<CR>
+    " |- first
+      noremap <silent> [B :bf<CR>
+    " |- last
+      noremap <silent> ]B :bl<CR>
+  " |- quick_fix
+    " |- previous
+      noremap <silent> [q :cp<CR>
+    " |- next
+      noremap <silent> ]q :cn<CR>
+    " |- first
+      noremap <silent> [Q :cf<CR>
+    " |- last
+      noremap <silent> ]Q :cl<CR>
+  " |- tab
 noremap <silent> [t :tabp<CR>
 noremap <silent> ]t :tabn<CR>
 noremap <silent> [T :tabf<CR>
