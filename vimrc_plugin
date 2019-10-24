@@ -41,6 +41,7 @@
   " |- omni
     " |- load tags file
       set tags+=./tags,tags
-    " |- display of complete
+    " |- display mode of complete
       set completeopt=menu
-    set complete-=i
+    " |- don't check all files
+      set complete-=i

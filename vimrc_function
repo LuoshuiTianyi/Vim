@@ -1,57 +1,60 @@
-func Scroll(up)
-  if a:up == 0 || a:up == 2
-    let scrollaction="\<c-y>"
-  else
-    let scrollaction="\<c-e>"
-  endif
-  exec "normal " . scrollaction
-  redraw
-  let counter = 1
-  if a:up == 2 || a:up == 3
-    let lim = 20
-  else
-    let lim = 10
-  endif
-  while counter < lim
-    let counter += 1
-    if a:up == 0 || a:up == 1
-      sleep 10m
+" |- Smooth Scrolling
+  func Scroll(up)
+    if a:up == 0 || a:up == 2
+      let scrollaction="\<c-y>"
     else
-      sleep 5m
+      let scrollaction="\<c-e>"
     endif
-    redraw
     exec "normal " . scrollaction
-  endwhile
-endfunc                 " smooth scrolling
-
-func! CompareRun()
-  exec "w"
-  if (&filetype == 'cpp')
-    exec 'make'
-    exec 'cw'
-    exec '!time ./%<'
-  elseif (&filetype == 'tex')
-    exec '!xelatex ./%'
-  elseif (&filetype == 'sh')
-    exec '!chmod +x ./%'
-    exec '!bash ./%'
-  elseif (&filetype == 'python')
-    exec '!python3 ./%'
-  endif
-endfunc                  " compile & run
-
-function! File_size(f)
-    let l:size = getfsize(expand(a:f))
-    if l:size == 0 || l:size == -1 || l:size == -2
-        return ''
-    endif
-    if l:size < 1024
-        return l:size.' bytes'
-    elseif l:size < 1024*1024
-        return printf('%.1f', l:size/1024.0).'k'
-    elseif l:size < 1024*1024*1024
-        return printf('%.1f', l:size/1024.0/1024.0) . 'm'
+    redraw
+    let counter = 1
+    if a:up == 2 || a:up == 3
+      let lim = 20
     else
-        return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
+      let lim = 10
     endif
-endfunction             " calculate the size of file
+    while counter < lim
+      let counter += 1
+      if a:up == 0 || a:up == 1
+        sleep 10m
+      else
+        sleep 5m
+      endif
+      redraw
+      exec "normal " . scrollaction
+    endwhile
+  endfunc
+
+" |- Compile & Run
+  func! CompileRun()
+    exec "w"
+    if (&filetype == 'cpp')
+      exec 'make'
+      exec 'cw'
+      exec '!time ./%<'
+    elseif (&filetype == 'tex')
+      exec '!xelatex ./%'
+    elseif (&filetype == 'sh')
+      exec '!chmod +x ./%'
+      exec '!bash ./%'
+    elseif (&filetype == 'python')
+      exec '!python3 ./%'
+    endif
+  endfunc
+
+" |- Calculate File Size
+  func! File_size(f)
+      let l:size = getfsize(expand(a:f))
+      if l:size == 0 || l:size == -1 || l:size == -2
+          return ''
+      endif
+      if l:size < 1024
+          return l:size.' bytes'
+      elseif l:size < 1024*1024
+          return printf('%.1f', l:size/1024.0).'k'
+      elseif l:size < 1024*1024*1024
+          return printf('%.1f', l:size/1024.0/1024.0) . 'm'
+      else
+          return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
+      endif
+  endfunc

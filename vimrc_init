@@ -1,4 +1,9 @@
-autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
-autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
-autocmd BufEnter * cd %:p:h
-autocmd FileType c ClangFormatAutoEnable
+" |- Template
+  " |- cpp
+    autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
+  " |- check.sh
+    autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
+" |- Auto change work dir
+  autocmd BufEnter * cd %:p:h
+" |- Enable the Format for c
+  autocmd FileType c ClangFormatAutoEnable
