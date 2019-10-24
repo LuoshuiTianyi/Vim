@@ -27,18 +27,20 @@
   " |- netrw
     " |- detailed information
       let g:netrw_liststyle = 3
-    " |- no display banner
-let g:netrw_banner = 0   " netrw 上方横幅不显示
-let g:netrw_hide = 1     " 不隐藏 . 开头文件
-let g:netrw_browse_split = 4
-                         " 树形视图
-let g:netrw_winsize = 18
-                         " 默认大小
-let g:netrw_chgwin = 2
+    " |- hide banner
+      let g:netrw_banner = 0
+    " |- display the '.' file
+      let g:netrw_hide = 1
+    " |- TreeView
+      let g:netrw_browse_split = 4
+    " |- default winsize
+      let g:netrw_winsize = 18
+    " |- open new file at original window
+      let g:netrw_chgwin = 2
                          " 打开新文件时使用原窗口
-
-"################################ omni #################################"
-
-set tags+=./tags,tags    " 添加 tag
-set completeopt=menu     " omni 补全表现方式
-set complete-=i
+  " |- omni
+    " |- load tags file
+      set tags+=./tags,tags
+    " |- display of complete
+      set completeopt=menu
+    set complete-=i
