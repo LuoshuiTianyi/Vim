@@ -1,19 +1,19 @@
-"****************************About Leader*******************************"
-
-let mapleader = " "      " 定义<leader>键
-nmap <silent> <leader>i :PlugInstall<CR>
-                         " 安装插件
-nmap <silent> <leader>u :PlugUpdate<CR>
-                         " 更新插件
-nmap <silent> <leader>d :PlugClean<CR>
-                         " 删除插件
-nmap <silent> <leader>c :tabe ~/Vim/vimrc<CR>
-                         " 快速打开配置文件
-nmap <silent> <leader><leader>s :source ~/.vimrc<CR>
-                         " 刷新配置
-
-"********************************[ and ]********************************"
-
+"|- leader
+  let mapleader = " "      " 定义<leader>键
+"|- Plug
+  "|- Install
+    nmap <silent> <leader>i :PlugInstall<CR>
+  "|- Update
+  nmap <silent> <leader>u :PlugUpdate<CR>
+  "|- Delete
+  nmap <silent> <leader>d :PlugClean<CR>
+"|- Profile
+  "|- Open
+    nmap <silent> <leader>c :tabe ~/Vim/vimrc<CR>
+  "|- Source
+    nmap <silent> <leader><leader>s :source ~/.vimrc<CR>
+"|- ListsTraverse
+  " 
 noremap <silent> [a :prev<CR>
 noremap <silent> ]a :n<CR>
 noremap <silent> [A :f<CR>
@@ -35,19 +35,18 @@ noremap <silent> [T :tabf<CR>
 noremap <silent> ]T :tabl<CR>
                          " 遍历 tab
 
-"***********************Usual Key Combinations**************************"
+"****************************** Coding *********************************"
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
                           " 补全
-
-"************************One Button Functions***************************"
-
 nmap <silent> <F5> :ClangFormat<CR>
                          " 格式化代码
 nmap <silent> <leader><F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
+                         " 生成并加载 tags
 nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
                          " F8打开输入输出文件
 nmap <silent> <F9> :call CompareRun()<CR>
+                         " 编译运行
 nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
                          " O2 C++11
 nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
