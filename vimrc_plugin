@@ -13,17 +13,10 @@ Plug 'yianwillis/vimcdoc'
                          " 中文文档
 Plug 'vim-scripts/fcitx.vim'
                          " 智能输入法切换
-Plug 'godlygeek/tabular'
-
-Plug 'plasticboy/vim-markdown'
-                         " markdown语法高亮
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
                          " markdown预览
 Plug 'tpope/vim-surround'
                          " 修改文本对象的贴心插件
-"Plug 'yonchu/accelerated-smooth-scroll'
-                         " 平滑滚动
-Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 

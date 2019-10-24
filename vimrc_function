@@ -1,4 +1,4 @@
-function SmoothScroll(up)
+func SmoothScroll(up)
     if a:up
         let scrollaction="\<c-y>"
     else
@@ -13,4 +13,20 @@ function SmoothScroll(up)
         redraw
         exec "normal " . scrollaction
     endwhile
-endfunction
+endfunc                  " 平滑滚动 
+
+func! CompareRun()
+  exec "w"
+  if (&filetype == 'cpp')
+    exec 'make'
+    exec 'cw'
+    exec '!time ./%<'
+  elseif (&filetype == 'tex')
+    exec '!xelatex ./%'
+  elseif (&filetype == 'sh')
+    exec '!chmod +x ./%'
+    exec '!bash ./%'
+  elseif (&filetype == 'python')
+    exec '!python3 ./%'
+  endif
+endfunc                  " 编译运行
