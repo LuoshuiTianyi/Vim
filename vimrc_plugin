@@ -61,7 +61,19 @@ set completeopt=menu     " omni 补全表现方式
 set complete-=i
 
 
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 3, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 3, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 3, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 3, 4)<CR>
+function SmoothScroll(up)
+    if a:up
+        let scrollaction="^Y"
+    else
+        let scrollaction="^E"
+    endif
+    exec "normal " . scrollaction
+    redraw
+    let counter=1
+    while counter<&scroll
+        let counter+=1
+        sleep 10m
+        redraw
+        exec "normal " . scrollaction
+    endwhile
+endfunction
