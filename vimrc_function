@@ -1,5 +1,5 @@
 func SmoothScroll(up)
-    if a:up
+    if s:up
         let scrollaction="\<c-y>"
     else
         let scrollaction="\<c-e>"
@@ -7,7 +7,7 @@ func SmoothScroll(up)
     exec "normal " . scrollaction
     redraw
     let counter=1
-    while counter<&scroll
+    while counter<10
         let counter+=1
         sleep 10m
         redraw
