@@ -1,0 +1,16 @@
+function SmoothScroll(up)
+    if a:up
+        let scrollaction="\<c-y>"
+    else
+        let scrollaction="\<c-e>"
+    endif
+    exec "normal " . scrollaction
+    redraw
+    let counter=1
+    while counter<&scroll
+        let counter+=1
+        sleep 10m
+        redraw
+        exec "normal " . scrollaction
+    endwhile
+endfunction

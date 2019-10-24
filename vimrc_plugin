@@ -59,23 +59,3 @@ let g:netrw_chgwin = 2
 set tags+=./tags,tags    " 添加 tag
 set completeopt=menu     " omni 补全表现方式
 set complete-=i
-
-
-function SmoothScroll(up)
-    if a:up
-        let scrollaction="\<c-y>"
-    else
-        let scrollaction="\<c-e>"
-    endif
-    exec "normal " . scrollaction
-    redraw
-    let counter=1
-    while counter<&scroll
-        let counter+=1
-        sleep 10m
-        redraw
-        exec "normal " . scrollaction
-    endwhile
-endfunction
-
-
