@@ -15,7 +15,7 @@
   " |- source
     nmap <silent> <leader><leader>s :source ~/.vimrc<CR>
 
-" |- Functionality
+" |- Functional
   " |- smooth scrolling
     " |- <c-d>
       nmap <silent> <c-d> :call Scroll(1)<CR>

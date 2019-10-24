@@ -14,9 +14,6 @@ set showtabline=2        " 显示标签页栏
 "set clipboard=unnamedplus
                          " 设置无名寄存器与系统剪切板同步
 filetype on              " 设置文件类型检测
-set go=                  " gvim 关闭菜单栏
-set guifont=Fira\ Code\ 14
-                         " 设置 gvim 字体
 set makeprg=g++\ ./%\ -o\ ./%<
                          " 设置 make
 
@@ -41,6 +38,9 @@ set wildmode=full        " zsh补全菜单
 "-----------------------------------------------------------------------"
 
 
+set go=                  " gvim 关闭菜单栏
+set guifont=Fira\ Code\ 14
+                         " 设置 gvim 字体
 syntax on                " 自动语法高亮
 set cursorline           " 高亮显示当前行
 highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
