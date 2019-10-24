@@ -17,9 +17,9 @@
       Plug 'tpope/vim-surround'
     " |- Chinese doc
       Plug 'yianwillis/vimcdoc'
+    " |- move quickly
+      Plug 'easymotion/vim-easymotion'
   call plug#end()
-    " |- matchit
-      runtime macros/matchit.vim
 
 " |- Settings of Plug
   " |- clang-format

@@ -1,5 +1,5 @@
 " |- Leader
-  let mapleader = " "      " 定义<leader>键
+  let mapleader = ","      " 定义<leader>键
 
 " |- Plug
   " |- install
