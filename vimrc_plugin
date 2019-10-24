@@ -15,6 +15,8 @@
       Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
     " |- powerful operate for text object
       Plug 'tpope/vim-surround'
+    " |- Chinese doc
+      Plug 'yianwillis/vimcdoc'
   call plug#end()
 
 " |- Settings of Plug
