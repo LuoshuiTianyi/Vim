@@ -1,3 +1,4 @@
 autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
 autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
 autocmd BufEnter * cd %:p:h
+autocmd FileType c ClangFormatAutoEnable
