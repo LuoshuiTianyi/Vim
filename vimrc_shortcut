@@ -1,5 +1,5 @@
 " |- Leader
-  let mapleader = ","      " 定义<leader>键
+  let mapleader = " "      " 定义<leader>键
 
 " |- Plug
   " |- install
@@ -74,7 +74,7 @@
   " |- open in & out
     nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
   " |- compile & run
-    nmap <silent> <F9> :call CompareRun()<CR>
+    nmap <silent> <F9> :call CompileRun()<CR>
   " |- O2 & c++11
     nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
   " |- debug compile
