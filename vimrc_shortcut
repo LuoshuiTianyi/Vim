@@ -61,9 +61,9 @@
     nmap <silent> <leader><F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
   " |- open in & out
     nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
-  " |- compare & run
+  " |- compile & run
     nmap <silent> <F9> :call CompareRun()<CR>
   " |- O2 & c++11
     nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
-  " |- debug compare
+  " |- debug compile
     nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
