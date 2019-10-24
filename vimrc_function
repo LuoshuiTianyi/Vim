@@ -1,5 +1,5 @@
-func SmoothScroll(up)
-  if a:up == 0
+func Scroll(up)
+  if a:up == 0 || a:up == 2
     let scrollaction="\<c-y>"
   else
     let scrollaction="\<c-e>"
@@ -7,13 +7,14 @@ func SmoothScroll(up)
   exec "normal " . scrollaction
   redraw
   let counter = 1
-  if a:up == 3 || a:up == 4
+  if a:up == 2 || a:up == 3
     let lim = 20
   else
     let lim = 10
+  endif
   while counter < lim
     let counter += 1
-    sleep 10m
+    sleep 5m
     redraw
     exec "normal " . scrollaction
   endwhile
@@ -49,4 +50,4 @@ function! File_size(f)
     else
         return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
     endif
-endfunction             " define statusline
+endfunction             " calculate the size of file
