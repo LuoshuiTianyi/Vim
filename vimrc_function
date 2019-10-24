@@ -17,7 +17,7 @@ func SmoothScroll(up)
     redraw
     exec "normal " . scrollaction
   endwhile
-endfunc                  " 平滑滚动 
+endfunc
 
 func! CompareRun()
   exec "w"

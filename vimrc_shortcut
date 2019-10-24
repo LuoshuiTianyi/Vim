@@ -1,5 +1,6 @@
-" |- leader
+" |- Leader
   let mapleader = " "      " 定义<leader>键
+
 " |- Plug
   " |- install
     nmap <silent> <leader>i :PlugInstall<CR>
@@ -7,6 +8,7 @@
     nmap <silent> <leader>u :PlugUpdate<CR>
   " |- delete
     nmap <silent> <leader>d :PlugClean<CR>
+
 " |- Profile
   " |- open
     nmap <silent> <leader>c :tabe ~/Vim/vimrc<CR>
@@ -31,7 +33,7 @@
       noremap <silent> [B :bf<CR>
     " |- last
       noremap <silent> ]B :bl<CR>
-  " |- quick_fix
+  " |- quick fix
     " |- previous
       noremap <silent> [q :cp<CR>
     " |- next
@@ -41,25 +43,27 @@
     " |- last
       noremap <silent> ]Q :cl<CR>
   " |- tab
-noremap <silent> [t :tabp<CR>
-noremap <silent> ]t :tabn<CR>
-noremap <silent> [T :tabf<CR>
-noremap <silent> ]T :tabl<CR>
-                         " 遍历 tab
+    " |- previous
+      noremap <silent> [t :tabp<CR>
+    " |- next
+      noremap <silent> ]t :tabn<CR>
+    " |- first
+      noremap <silent> [T :tabf<CR>
+    " |- last
+      noremap <silent> ]T :tabl<CR>
 
-"****************************** Coding *********************************"
-
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-                          " 补全
-nmap <silent> <F5> :ClangFormat<CR>
-                         " 格式化代码
-nmap <silent> <leader><F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
-                         " 生成并加载 tags
-nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
-                         " F8打开输入输出文件
-nmap <silent> <F9> :call CompareRun()<CR>
-                         " 编译运行
-nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
-                         " O2 C++11
-nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
-                         " 超级调试
+" |- Coding
+  " |- complete
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " |- clang format
+    nmap <silent> <F5> :ClangFormat<CR>
+  " |- ctags generating
+    nmap <silent> <leader><F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
+  " |- open in & out
+    nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
+  " |- compare & run
+    nmap <silent> <F9> :call CompareRun()<CR>
+  " |- O2 & c++11
+    nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
+  " |- debug compare
+    nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
