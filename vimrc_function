@@ -22,6 +22,8 @@
       endif
       redraw
       exec "normal " . scrollaction
+      if a:up == 0 || a:up == 2
+        exec "normal k"
     endwhile
   endfunc
 
