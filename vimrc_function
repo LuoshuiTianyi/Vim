@@ -1,35 +1,24 @@
 " |- Smooth Scrolling
-" ============================================================================
-  func Scroll(up)
-    if a:up == 0 || a:up == 2
-      let scrollaction="\<c-y>"
-    else
-      let scrollaction="\<c-e>"
-    endif
-    exec "normal " . scrollaction
+func Scroll(up)
+  if a:up == 0 || a:up == 2
+    let scrollaction="\<c-y>k"
+  else
+    let scrollaction="\<c-e>j"
+  endif
+  let lim = 10
+  let tim = 10
+  if a:up == 2 || a:up == 3
+    let lim *= 2
+    let tim /= 2
+  endif
+  let counter = 0
+  while counter < lim
+    let counter += 1
+    exe "sleep " lim . " m"
     redraw
-    let counter = 1
-    if a:up == 2 || a:up == 3
-      let lim = 20
-    else
-      let lim = 10
-    endif
-    while counter < lim
-      let counter += 1
-      if a:up == 0 || a:up == 1
-        sleep 10m
-      else
-        sleep 5m
-      endif
-      redraw
-      exec "normal " . scrollaction
-      if a:up == 0 || a:up == 2
-        exec "normal k"
-      else
-        exec "normal j"
-      endif
-    endwhile
-  endfunc
+    exe "normal " . scrollaction
+  endwhile
+endfunc
 
 " |- Compile & Run
 " ============================================================================
