@@ -6,13 +6,12 @@
   set nocompatible
 " |- turn off the tone
   set vb t_vb=
-" |- turn off the error flashing
-auto GuiEnter * set t_vb=  " 关闭错误闪烁
-" |- 
-set backspace=indent,eol,start
-                         " 允许删除换行符
-set mouse=a              " 开启鼠标支持
-set history=2000         " 历史ex命令记录上限提高
+" |- allow deleting the carriage return
+  set backspace=indent,eol,start
+" |- enable mouse support
+  set mouse=a
+" |- set the limit of history
+  set history=2000
 set showtabline=2        " 显示标签页栏
 "set clipboard=unnamedplus
                          " 设置无名寄存器与系统剪切板同步
