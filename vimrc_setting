@@ -35,9 +35,10 @@
   set virtualedit=block,onemore
 " |- set the waited time of key code
   set ttimeoutlen=0        " 设置<ESC>键响应时间
-" |- 
-  set wildmenu             " 开启zsh支持
-set wildmode=full        " zsh补全菜单
+" |- list completion operates above
+  set wildmenu
+" |- specify wildmode
+  set wildmode=full
 
 
 "-----------------------------------------------------------------------"
