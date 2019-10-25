@@ -46,8 +46,10 @@
 "-----------------------------------------------------------------------"
 
 
-set go=                  " gvim 关闭菜单栏
-set guifont=Fira\ Code\ 14
+" |- hide the menus in gvim
+  set go=
+" |- spetify guifont
+  set guifont=Fira\ Code\ 14
                          " 设置 gvim 字体
 syntax on                " 自动语法高亮
 set cursorline           " 高亮显示当前行
