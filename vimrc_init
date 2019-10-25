@@ -7,3 +7,5 @@
   autocmd BufEnter * cd %:p:h
 " |- Enable the Format for c
   autocmd FileType c ClangFormatAutoEnable
+" |- turn off the error flashing
+  autocmd GuiEnter * set t_vb=
