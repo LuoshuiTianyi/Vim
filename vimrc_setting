@@ -50,20 +50,23 @@
   set go=
 " |- spetify guifont
   set guifont=Fira\ Code\ 14
-                         " 设置 gvim 字体
-syntax on                " 自动语法高亮
-set cursorline           " 高亮显示当前行
-highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
-                         " 高亮显示当前行具体设置
-set fillchars=vert:\ ,stl:\ ,stlnc:\
-                         " 在分割窗口间留出空白
-set termguicolors        " 色彩显示支持
-color onedark            " 颜色主题
-let &t_SI.="\e[5 q" 
-let &t_SR.="\e[3 q" 
-let &t_EI.="\e[1 q" 
-autocmd VimEnter * silent !echo -ne "\e[1 q"
-                         " 设置终端下不同模式光标变化
+" |- syntax highlight
+  syntax on                " 自动语法高亮
+" |- highlight current line
+  set cursorline           " 高亮显示当前行
+" |- set the color of current line
+  highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
+" |- space between windows
+  set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+" |- set the display of term color as gui
+  set termguicolors
+" |- specity colorscheme
+  color onedark
+" |- set the shape of cursor
+  
+  let &t_SI.="\e[5 q" 
+  let &t_SR.="\e[3 q" 
+  let &t_EI.="\e[1 q" 
 
 
 "-----------------------------------------------------------------------"

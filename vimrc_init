@@ -9,3 +9,5 @@
   autocmd FileType c ClangFormatAutoEnable
 " |- turn off the error flashing
   autocmd GuiEnter * set t_vb=
+" |- set default cursor shape as block
+  autocmd VimEnter * silent !echo -ne "\e[1 q"
