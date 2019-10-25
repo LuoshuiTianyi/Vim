@@ -1,4 +1,5 @@
 " |- source profiles
+" ============================================================================
   " |- function
     source ~/Vim/vimrc_function
   " |- plug

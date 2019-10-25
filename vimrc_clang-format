@@ -1,4 +1,5 @@
 " |- Cpp style format
+" ============================================================================
   let g:clang_format#style_options = {
     \ "Language" : "Cpp",
     \ "BasedOnStyle" : "Google",

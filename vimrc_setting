@@ -1,116 +1,108 @@
-"-----------------------------------------------------------------------"
-"----------------------------Basic Settings-----------------------------"
-"-----------------------------------------------------------------------"
+" |- Basic
+" ============================================================================
+  " |- not compatible with original 'vi'
+    set nocompatible
+  " |- turn off the tone
+    set vb t_vb=
+  " |- allow deleting the carriage return
+    set backspace=indent,eol,start
+  " |- enable mouse support
+    set mouse=a
+  " |- set the limit of history
+    set history=2000
+  " |- show the tabline
+    set showtabline=2
+  " |- set the default register as '+'
+    "set clipboard=unnamedplus
+  " |- determine the filetype
+    filetype on
+  " |- set the makeprg
+    set makeprg=g++\ ./%\ -o\ ./%<
 
-" |- not compatible with original 'vi'
-  set nocompatible
-" |- turn off the tone
-" |- allow deleting the carriage return
-  set backspace=indent,eol,start
-" |- enable mouse support
-  set mouse=a
-" |- set the limit of history
-  set history=2000
-" |- show the tabline
-  set showtabline=2
-" |- set the default register as '+'
-  "set clipboard=unnamedplus
-" |- determine the filetype
-  filetype on
-" |- set the makeprg
-  set makeprg=g++\ ./%\ -o\ ./%<
+" |- Functional
+  " |- show the position of cursor
+    set ruler
+  " |- show the line number
+    set number
+  " |- allow the cursor to wrap
+    set whichwrap+=h,l
+  " |- allow the cursor to be positioned where there is no actual character
+    set virtualedit=block,onemore
+  " |- set the waited time of key code
+    set ttimeoutlen=0        " 设置<ESC>键响应时间
+  " |- list completion operates above
+    set wildmenu
+  " |- specify wildmode
+    set wildmode=full
 
-
-"-----------------------------------------------------------------------"
-"--------------------------Functional Settings--------------------------"
-"-----------------------------------------------------------------------"
-
-" |- show the position of cursor
-  set ruler
-" |- show the line number
-  set number
-" |- allow the cursor to wrap
-  set whichwrap+=h,l
-" |- allow the cursor to be positioned where there is no actual character
-  set virtualedit=block,onemore
-" |- set the waited time of key code
-  set ttimeoutlen=0        " 设置<ESC>键响应时间
-" |- list completion operates above
-  set wildmenu
-" |- specify wildmode
-  set wildmode=full
-
-
-"-----------------------------------------------------------------------"
-"-------------------------Physiognomic Settings-------------------------"
-"-----------------------------------------------------------------------"
-
-
-" |- hide the menus in gvim
-  set go=
-" |- spetify guifont
-  set guifont=Fira\ Code\ 14
-" |- syntax highlight
-  syntax on                " 自动语法高亮
-" |- highlight current line
-  set cursorline           " 高亮显示当前行
-" |- set the color of current line
-  highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
-" |- space between windows
-  set fillchars=vert:\ ,stl:\ ,stlnc:\ 
-" |- set the display of term color as gui
-  set termguicolors
-" |- specity colorscheme
-  color onedark
-" |- set the shape of cursor
-  " |- insert mode (bar)
-    let &t_SI.="\e[5 q" 
-  " |- replace mode (underline)
-    let &t_SR.="\e[3 q" 
-  " |- end insert or replace mode (block)
-    let &t_EI.="\e[1 q" 
+" |- Physiognomic
+" ============================================================================
+  " |- hide the menus in gvim
+    set go=
+  " |- spetify guifont
+    set guifont=Fira\ Code\ 14
+  " |- syntax highlight
+    syntax on                " 自动语法高亮
+  " |- highlight current line
+    set cursorline           " 高亮显示当前行
+  " |- set the color of current line
+    highlight CursorLine   cterm=NONE ctermbg=255 guibg=NONE guifg=NONE
+  " |- space between windows
+    set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+  " |- set the display of term color as gui
+    set termguicolors
+  " |- specity colorscheme
+    color onedark
+  " |- set the shape of cursor
+    " ------------------------
+    " |- insert mode (bar)
+      let &t_SI.="\e[5 q" 
+    " |- replace mode (underline)
+      let &t_SR.="\e[3 q" 
+    " |- end insert or replace mode (block)
+      let &t_EI.="\e[1 q" 
 
 
-"-----------------------------------------------------------------------"
-"----------------------------Coding Settings----------------------------"
-"-----------------------------------------------------------------------"
+" |- Format
+" ============================================================================
+  " |- autoindent
+    set autoindent
+  " |- C program indent
+    set cindent
+  " |- set detailed way to indent for C
+    set cinoptions=g0,:0,N-s,(0
+  " |- set topstop
+    set tabstop=2
+  " |- tab to space
+    set expandtab
+  " |- shiftwidth
+    set shiftwidth=2
+  " |- make backspace work normally
+    set backspace=indent,eol,start
+
+" |- Search
+" ============================================================================
+  " |- search immediately
+    set incsearch
 
 
-"****************************Format Settings****************************"
-
-" |- autoindent
-  set autoindent
-" |- C program indent
-  set cindent
-" |- set detailed way to indent for C
-  set cinoptions=g0,:0,N-s,(0
-" |- set topstop
-  set tabstop=2
-" |- tab to space
-  set expandtab
-" |- shiftwidth
-  set shiftwidth=2
-" |- make backspace work normally
-  set backspace=indent, eol, start
-
-"***************************Search Settings*****************************"
-
-" |- search immediately
-  set incsearch
-
-"***************************Cache Settings******************************"
-
-" |- no backup file
-  set nobackup
-" |- no swap file
-  set noswapfile
-" |- auto read the changed file
-  set autoread
-" |- ask for confirmation when 'foo' already exists or there are changes
-  set confirm
-
-set laststatus=2
-set statusline=%1*\ %{File_size(@%)}\ %*
-set statusline+=%2*\ %F\ %*
-set statusline+=%=%3*\ %-14.(%l:%c%V%)%*
-set statusline+=%4*\ %P\ %*
+" |- Cache
+" ============================================================================
+  " |- no backup file
+    set nobackup
+  " |- no swap file
+    set noswapfile
+  " |- auto read the changed file
+    set autoread
+  " |- ask for confirmation when 'foo' already exists or there are changes
+    set confirm
+  " |- status config
+    " --------------
+    " |- always display
+      set laststatus=2
+    " |- filesize
+      set statusline=%1*\ %{File_size(@%)}\ %*
+    " |- filepath
+      set statusline+=%2*\ %F\ %*
+    " |- line & row
+      set statusline+=%=%3*%-7.(%l:%c%V%)%*
