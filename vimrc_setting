@@ -106,8 +106,8 @@
   set noswapfile
 " |- auto read the changed file
   set autoread
-set confirm              " 在处理未保存或只读文件的时候，弹出确认
-
+" |- ask for confirmation when 'foo' already exists or there are changes
+  set confirm
 
 set laststatus=2
 set statusline=%1*\ %{File_size(@%)}\ %*
