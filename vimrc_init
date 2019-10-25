@@ -1,4 +1,5 @@
 " |- Template
+" ============================================================================
   " |- cpp
     autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
   " |- check.sh

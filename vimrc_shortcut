@@ -1,7 +1,9 @@
 " |- Leader
+" ============================================================================
   let mapleader = " "      " 定义<leader>键
 
 " |- Plug
+" ============================================================================
   " |- install
     nmap <silent> <leader>i :PlugInstall<CR>
   " |- update
@@ -10,13 +12,16 @@
     nmap <silent> <leader>d :PlugClean<CR>
 
 " |- Profile
+" ============================================================================
   " |- open
     nmap <silent> <leader>c :tabe ~/Vim/vimrc<CR>
   " |- source
     nmap <silent> <leader><leader>s :source ~/.vimrc<CR>
 
 " |- Functional
+" ============================================================================
   " |- smooth scrolling
+  " -------------------
     " |- <c-d>
       nmap <silent> <c-d> :call Scroll(1)<CR>
     " |- <c-f>
@@ -27,7 +32,9 @@
       nmap <silent> <c-b> :call Scroll(2)<CR>
 
 " |- ListsTraverse
+" ============================================================================
   " |-args
+  " ------
     " |- previous
       noremap <silent> [a :prev<CR>
     " |- next
@@ -37,6 +44,7 @@
     " |- last
       noremap <silent> ]A :l<CR>
   " |- buffer
+  " ---------
     " |- previous
       noremap <silent> [b :bp<CR>
     " |- next
@@ -46,6 +54,7 @@
     " |- last
       noremap <silent> ]B :bl<CR>
   " |- quick fix
+  " ------------
     " |- previous
       noremap <silent> [q :cp<CR>
     " |- next
@@ -55,6 +64,7 @@
     " |- last
       noremap <silent> ]Q :cl<CR>
   " |- tab
+  " ------
     " |- previous
       noremap <silent> [t :tabp<CR>
     " |- next
@@ -65,6 +75,7 @@
       noremap <silent> ]T :tabl<CR>
 
 " |- Coding
+" ============================================================================
   " |- complete
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   " |- clang format

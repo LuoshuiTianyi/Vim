@@ -21,37 +21,35 @@ func Scroll(up)
 endfunc
 
 " |- Compile & Run
-" ============================================================================
-  func! CompileRun()
-    exec "w"
-    if (&filetype == 'cpp')
-      exec 'make'
-      exec 'cw'
-      exec '!time ./%<'
-    elseif (&filetype == 'tex')
-      exec '!xelatex ./%'
-    elseif (&filetype == 'sh')
-      exec '!chmod +x ./%'
-      exec '!bash ./%'
-    elseif (&filetype == 'python')
-      exec '!python3 ./%'
-    endif
-  endfunc
+func! CompileRun()
+  exec "w"
+  if (&filetype == 'cpp')
+    exec 'make'
+    exec 'cw'
+    exec '!time ./%<'
+  elseif (&filetype == 'tex')
+    exec '!xelatex ./%'
+  elseif (&filetype == 'sh')
+    exec '!chmod +x ./%'
+    exec '!bash ./%'
+  elseif (&filetype == 'python')
+    exec '!python3 ./%'
+  endif
+endfunc
 
 " |- Calculate File Size
-" ============================================================================
-  func! File_size(f)
-      let l:size = getfsize(expand(a:f))
-      if l:size == 0 || l:size == -1 || l:size == -2
-          return ''
-      endif
-      if l:size < 1024
-          return l:size.' bytes'
-      elseif l:size < 1024*1024
-          return printf('%.1f', l:size/1024.0).'k'
-      elseif l:size < 1024*1024*1024
-          return printf('%.1f', l:size/1024.0/1024.0) . 'm'
-      else
-          return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
-      endif
-  endfunc
+func! File_size(f)
+    let l:size = getfsize(expand(a:f))
+    if l:size == 0 || l:size == -1 || l:size == -2
+        return ''
+    endif
+    if l:size < 1024
+        return l:size.' bytes'
+    elseif l:size < 1024*1024
+        return printf('%.1f', l:size/1024.0).'k'
+    elseif l:size < 1024*1024*1024
+        return printf('%.1f', l:size/1024.0/1024.0) . 'm'
+    else
+        return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
+    endif
+endfunc
