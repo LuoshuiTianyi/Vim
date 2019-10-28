@@ -30,6 +30,12 @@
       nmap <silent> <c-u> :call Scroll(0)<CR>
     " |- <c-b>
       nmap <silent> <c-b> :call Scroll(2)<CR>
+  " |- text object
+  " --------------
+    " |- w
+      onoremap w iw
+    " |- W
+      onoremap W iW
 
 " |- ListsTraverse
 " ============================================================================
@@ -77,7 +83,12 @@
 " |- Coding
 " ============================================================================
   " |- complete
-    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " -----------
+    " |- confirm the select by enter
+      inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    " |- select
+      imap <c-j> <c-n>
+      imap <c-k> <c-p>
   " |- clang format
     nmap <silent> <F5> :ClangFormat<CR>
   " |- ctags generating

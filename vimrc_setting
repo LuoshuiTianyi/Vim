@@ -101,7 +101,7 @@
     " |- always display
       set laststatus=2
     " |- filesize
-      set statusline=%1*\ %{File_size(@%)}\ %*
+      set statusline=%1*\ %{Get_filesize(@%)}\ %*
     " |- filepath
       set statusline+=%2*\ %F\ %*
     " |- line & row

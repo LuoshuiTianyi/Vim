@@ -1,55 +1,66 @@
+" |- FileSize
+let g:b = 1.0
+let g:kb = g:b * 1024.0
+let g:mb = g:kb * 1024.0
+let g:gb = g:mb * 1024.0
+let g:tb = g:gb * 1024.0
 " |- Smooth Scrolling
 func Scroll(up)
   if a:up == 0 || a:up == 2
-    let scrollaction="\<c-y>k"
+    let l:scrollaction="\<c-y>k"
   else
-    let scrollaction="\<c-e>j"
+    let l:scrollaction="\<c-e>j"
   endif
-  let lim = 10
-  let tim = 10
+  let l:lim = 10
+  let l:tim = 10
   if a:up == 2 || a:up == 3
-    let lim *= 2
-    let tim /= 2
+    let l:lim = l:lim * 2
+    let l:tim = l:tim / 2
   endif
-  let counter = 0
-  while counter < lim
-    let counter += 1
-    exe "sleep " lim . " m"
+  let l:counter = 0
+  while l:counter < l:lim
+    let l:counter += 1
+    exe "sleep " l:tim . " m"
     redraw
-    exe "normal " . scrollaction
+    exe "normal " . l:scrollaction
   endwhile
 endfunc
 
 " |- Compile & Run
-func! CompileRun()
+func CompileRun()
   exec "w"
-  if (&filetype == 'cpp')
+  if &filetype == 'cpp'
     exec 'make'
     exec 'cw'
     exec '!time ./%<'
-  elseif (&filetype == 'tex')
+  elseif &filetype == 'tex'
     exec '!xelatex ./%'
-  elseif (&filetype == 'sh')
+  elseif &filetype == 'sh'
     exec '!chmod +x ./%'
     exec '!bash ./%'
-  elseif (&filetype == 'python')
+  elseif &filetype == 'python'
     exec '!python3 ./%'
+  elseif &filetype == 'java'
+    exec '!javac %'
+    exec '!java %<'
   endif
 endfunc
 
 " |- Calculate File Size
-func! File_size(f)
+func Get_filesize(f)
     let l:size = getfsize(expand(a:f))
     if l:size == 0 || l:size == -1 || l:size == -2
-        return ''
+      return ''
     endif
-    if l:size < 1024
-        return l:size.' bytes'
-    elseif l:size < 1024*1024
-        return printf('%.1f', l:size/1024.0).'k'
-    elseif l:size < 1024*1024*1024
-        return printf('%.1f', l:size/1024.0/1024.0) . 'm'
+    if l:size < g:kb
+      return l:size." B"
+    elseif l:size < g:mb
+      return printf('%.2f', l:size/g:kb).' K'
+    elseif l:size < g:gb
+      return printf('%.2f', l:size/g:mb) . ' M'
+    elseif l:size < g:tb
+      return printf('%.2f', l:size/g:gb) . ' G'
     else
-        return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
+      return printf('%.2f', l:size/g:tb) . ' T'
     endif
 endfunc

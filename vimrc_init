@@ -1,6 +1,8 @@
 " |- Template
 " ============================================================================
   augroup Template
+  " |- clear
+    autocmd!
   " |- cpp
     autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
   " |- check.sh
@@ -8,6 +10,8 @@
   augroup END
 " |- Functional
   augroup Functionalauto
+  " |- clear
+    autocmd!
   " |- Auto change work dir
     autocmd BufEnter * cd %:p:h
   " |- Enable the Format for c
