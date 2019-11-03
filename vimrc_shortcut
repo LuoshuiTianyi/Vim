@@ -22,14 +22,28 @@
 " ============================================================================
   " |- smooth scrolling
   " -------------------
+  "  " |- <c-d>
+  "    nmap <silent> <c-d> :call Scroll(1)<CR>
+  "  " |- <c-f>
+  "    nmap <silent> <c-f> :call Scroll(3)<CR>
+  "  " |- <c-u>
+  "    nmap <silent> <c-u> :call Scroll(0)<CR>
+  "  " |- <c-b>
+  "    nmap <silent> <c-b> :call Scroll(2)<CR>
+  " |- Move
+  " -------------------
     " |- <c-d>
-      nmap <silent> <c-d> :call Scroll(1)<CR>
+      nmap <c-d> 5j
+      vmap <c-d> 5j
     " |- <c-f>
-      nmap <silent> <c-f> :call Scroll(3)<CR>
+      nmap <c-f> 10j
+      vmap <c-f> 10j
     " |- <c-u>
-      nmap <silent> <c-u> :call Scroll(0)<CR>
+      nmap <c-u> 5k
+      vmap <c-u> 5k
     " |- <c-b>
-      nmap <silent> <c-b> :call Scroll(2)<CR>
+      nmap <c-b> 10k
+      vmap <c-b> 10k
   " |- text object
   " --------------
     " |- w
@@ -62,13 +76,13 @@
   " |- quick fix
   " ------------
     " |- previous
-      noremap <silent> [q :cp<CR>
+      noremap <silent> [c :cp<CR>
     " |- next
-      noremap <silent> ]q :cn<CR>
+      noremap <silent> ]c :cn<CR>
     " |- first
-      noremap <silent> [Q :cf<CR>
+      noremap <silent> [C :cf<CR>
     " |- last
-      noremap <silent> ]Q :cl<CR>
+      noremap <silent> ]C :cl<CR>
   " |- tab
   " ------
     " |- previous
@@ -98,6 +112,6 @@
   " |- compile & run
     nmap <silent> <F9> :call CompileRun()<CR>
   " |- O2 & c++11
-    nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
+    nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11 -DThyu<CR>:!time ./%<<CR> 
   " |- debug compile
-    nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
+    nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11 -DThyu<CR>:!time ./%<<CR>

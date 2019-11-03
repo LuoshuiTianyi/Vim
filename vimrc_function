@@ -5,26 +5,26 @@ let g:mb = g:kb * 1024.0
 let g:gb = g:mb * 1024.0
 let g:tb = g:gb * 1024.0
 " |- Smooth Scrolling
-func Scroll(up)
-  if a:up == 0 || a:up == 2
-    let l:scrollaction="\<c-y>k"
-  else
-    let l:scrollaction="\<c-e>j"
-  endif
-  let l:lim = 10
-  let l:tim = 10
-  if a:up == 2 || a:up == 3
-    let l:lim = l:lim * 2
-    let l:tim = l:tim / 2
-  endif
-  let l:counter = 0
-  while l:counter < l:lim
-    let l:counter += 1
-    exe "sleep " l:tim . " m"
-    redraw
-    exe "normal " . l:scrollaction
-  endwhile
-endfunc
+"func Scroll(up)
+"  if a:up == 0 || a:up == 2
+"    let l:scrollaction="\<c-y>k"
+"  else
+"    let l:scrollaction="\<c-e>j"
+"  endif
+"  let l:lim = 10
+"  let l:tim = 10
+"  if a:up == 2 || a:up == 3
+"    let l:lim = l:lim * 2
+"    let l:tim = l:tim / 2
+"  endif
+"  let l:counter = 0
+"  while l:counter < l:lim
+"    let l:counter += 1
+"    exe "sleep " l:tim . " m"
+"    redraw
+"    exe "normal " . l:scrollaction
+"  endwhile
+"endfunc
 
 " |- Compile & Run
 func CompileRun()
