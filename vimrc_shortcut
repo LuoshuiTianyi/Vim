@@ -105,8 +105,6 @@
       imap <c-k> <c-p>
   " |- clang format
     nmap <silent> <F5> :ClangFormat<CR>
-  " |- ctags generating
-    nmap <silent> <leader><F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
   " |- open in & out
     nmap <silent> <F8> :vs %<.out<CR>:sp %<.in<CR>
   " |- compile & run
@@ -114,4 +112,4 @@
   " |- O2 & c++11
     nmap <leader><F9> :w<CR>:!g++ % -o %< -O2 -std=c++11<CR>:!time ./%<<CR> 
   " |- debug compile
-    nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -ggdb -std=c++11<CR>:!time ./%<<CR>
+    nmap <silent> <leader><leader><F9> :w<CR>:!g++ -o %< % -O2 -Wall -Wextra -fsanitize=address -fsanitize=undefined -std=c++11<CR>:!time ./%<<CR>
