@@ -17,7 +17,7 @@
   " |- determine the filetype
     filetype on
   " |- set the makeprg
-    set makeprg=g++\ -g\ ./%\ -o\ ./%<
+    set makeprg=g++\ ./%\ -o\ ./%<
 
 " |- Functional
   " |- show the position of cursor
