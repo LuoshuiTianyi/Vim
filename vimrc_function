@@ -27,11 +27,10 @@ let g:tb = g:gb * 1024.0
 "endfunc
 
 " |- Compile & Run
-func CompileRun()
+func CompileRun(option)
   exec "w"
   if &filetype == 'cpp'
-    exec 'make'
-    exec 'cw'
+    exec 'make' . a:option
     exec '!time ./%<'
   elseif &filetype == 'tex'
     exec '!xelatex ./%'
