@@ -44,12 +44,6 @@
     " |- <c-b>
       nmap <c-b> 10k
       vmap <c-b> 10k
-  " |- text object
-  " --------------
-    " |- w
-      onoremap w iw
-    " |- W
-      onoremap W iW
 
 " |- ListsTraverse
 " ============================================================================
