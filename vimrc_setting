@@ -34,6 +34,8 @@
     set wildmenu
   " |- specify wildmode
     set wildmode=full
+  " |- specify foldmode
+    set foldmethod=manual
 
 " |- Physiognomic
 " ============================================================================
