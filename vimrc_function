@@ -28,28 +28,32 @@ let g:tb = g:gb * 1024.0
 
 " |- Compile & Run
 func CompileRun(option)
-  exec "w"
+  exe "w"
   if &filetype == 'cpp'
-    exec 'make' . a:option
-    exec '!time ./%<'
+    exe 'make' . a:option
+    exe '!time ./%<'
   elseif &filetype == 'tex'
-    exec '!xelatex ./%'
+    exe '!xelatex ./%'
   elseif &filetype == 'sh'
-    exec '!chmod +x ./%'
-    exec '!bash ./%'
+    exe '!chmod +x ./%'
+    exe '!bash ./%'
   elseif &filetype == 'python'
-    exec '!python3 ./%'
+    exe '!python3 ./%'
   elseif &filetype == 'java'
-    exec '!javac %'
-    exec '!java %<'
+    exe '!javac %'
+    exe '!java %<'
   endif
 endfunc
 
 func FileTemp()
   if &filetype == 'cpp'
-    exec '0r ~/Template/template.cpp'
-  elseif &filetype == 'sh'
-    exec
+    exe '0r ~/Template/template.cpp'
+    exe 'normal Gddkkkkkkf""%pdF.xjF""%pdF.x'
+  elseif &filename == 'check.sh'
+    exe '0r ~/Template/template_check.sh'
+    exe 'normal Gddgg'
+  endif
+endfunc
 
 " |- Calculate File Size
 func Get_filesize(f)

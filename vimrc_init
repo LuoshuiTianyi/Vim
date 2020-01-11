@@ -4,7 +4,7 @@
   " |- clear
     autocmd!
   " |- template
-    autocmd BufNewFile * :call 
+    autocmd BufNewFile * :call FileTemp()
   augroup END
 " |- Functional
   augroup Functionalauto
