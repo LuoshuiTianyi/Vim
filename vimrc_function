@@ -45,6 +45,12 @@ func CompileRun(option)
   endif
 endfunc
 
+func FileTemp()
+  if &filetype == 'cpp'
+    exec '0r ~/Template/template.cpp'
+  elseif &filetype == 'sh'
+    exec
+
 " |- Calculate File Size
 func Get_filesize(f)
     let l:size = getfsize(expand(a:f))

@@ -3,10 +3,8 @@
   augroup Template
   " |- clear
     autocmd!
-  " |- cpp
-    autocmd BufNewFile *.cpp :0r ~/Template/template.cpp
-  " |- check.sh
-    autocmd BufNewFile check.sh :0r ~/Template/template_check.sh
+  " |- template
+    autocmd BufNewFile * :call 
   augroup END
 " |- Functional
   augroup Functionalauto
