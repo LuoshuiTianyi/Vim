@@ -49,7 +49,7 @@ func FileTemp()
   if &filetype == 'cpp'
     exe '0r ~/Template/template.cpp'
     exe 'normal Gddkkkkkkf""%pdF.xjF""%pdF.x'
-  elseif &filename == 'check.sh'
+  elseif @% == 'check.sh'
     exe '0r ~/Template/template_check.sh'
     exe 'normal Gddgg'
   endif
