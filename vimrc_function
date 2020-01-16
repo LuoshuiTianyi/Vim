@@ -35,7 +35,6 @@ func CompileRun(option)
   elseif &filetype == 'tex'
     exe '!xelatex ./%'
   elseif &filetype == 'sh'
-    exe '!chmod +x ./%'
     exe '!bash ./%'
   elseif &filetype == 'python'
     exe '!python3 ./%'
