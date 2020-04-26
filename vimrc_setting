@@ -54,7 +54,7 @@
   " |- set the display of term color as gui
     set termguicolors
   " |- specity colorscheme
-    color softera
+    color onedark
   " |- set the shape of cursor
     " ------------------------
     " |- insert mode (bar)
