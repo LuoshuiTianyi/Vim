@@ -46,7 +46,8 @@
       vmap <c-b> 10k
   " |- Fold
   " -------
-      nmap Z zfa{
+      nnoremap z zfa{
+      nnoremap Z zd
   " |- Indent
   " ---------
       vmap < <gv
