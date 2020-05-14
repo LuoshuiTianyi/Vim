@@ -111,4 +111,4 @@
   " |- O2 & c++11
     nmap <leader><F9> :call CompileRun(" -O2 -std=c++11")<CR>
   " |- debug compile
-    nmap <silent> <leader><leader><F9> :call CompileRun(" -O2 -Wall -Wextra -fsanitize=address -ftrapv -std=c++11")<CR>
+    nmap <silent> <leader><leader><F9> :call CompileRun(" -ggdb -fsanitize=address,undefined -std=c++11")<CR>
